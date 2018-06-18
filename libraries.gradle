@@ -1,0 +1,36 @@
+ext {
+    restDocsVersion = '0.1.0.BUILD-SNAPSHOT'
+    groovyVersion   = '2.4.4'
+    spockVersion    = '1.1-groovy-2.4'
+
+    libpacks = [
+            cloud : [
+                    "org.springframework.cloud:spring-cloud-commons",
+                    "org.springframework.cloud:spring-cloud-config-client",
+            ],
+
+            logback_groovy : [
+                    "org.codehaus.groovy:groovy-all:${groovyVersion}"
+            ],
+
+            logstash : [
+                    'net.logstash.logback:logstash-logback-encoder:4.4'
+            ],
+
+            testing : [
+                    "org.springframework.boot:spring-boot-starter-test",
+                    'org.unitils:unitils-core:3.4.2',
+                    "org.spockframework:spock-core:${spockVersion}",
+                    "org.spockframework:spock-spring:${spockVersion}",
+                    "cglib:cglib-nodep:3.1"
+            ],
+
+            documentation : [
+                    "org.springframework.restdocs:spring-restdocs:${restDocsVersion}"
+            ],
+
+            guava: [
+                    'com.google.guava:guava:18.0'
+            ],
+    ]
+}

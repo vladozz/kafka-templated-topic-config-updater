@@ -1,0 +1,43 @@
+buildscript {
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:2.0.3.RELEASE"
+    }
+}
+
+group = 'com.github.vladozz.kafka'
+
+repositories {
+    mavenCentral()
+}
+
+apply from: "${rootProject.projectDir}/libraries.gradle"
+
+dependencies {
+    compile 'org.projectlombok:lombok:1.18.0'
+    compile 'org.apache.commons:commons-lang3:3.7'
+    compile 'org.apache.commons:commons-collections4:4.1'
+    compile 'io.javaslang:javaslang:2.0.6'
+    compile 'javax.validation:validation-api:2.0.1.Final'
+
+    compile "org.springframework.kafka:spring-kafka:2.1.7.RELEASE"
+
+    compile "org.springframework.boot:spring-boot-autoconfigure"
+    compile "org.springframework.boot:spring-boot-starter-actuator"
+    compile "org.springframework.boot:spring-boot-starter-logging"
+
+    compile libpacks.cloud
+
+    compile libpacks.logback_groovy
+    compile libpacks.logstash
+
+    testCompile libpacks.testing
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.7'
+}

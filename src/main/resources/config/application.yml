@@ -1,0 +1,11 @@
+spring:
+  application.name: kafka-templated-topic-config-updater
+
+  kafka:
+    bootstrap-servers: localhost:9092
+
+kafka-templated-config-updater:
+  template-topic: template
+  regexp:
+   - ^topic\d{1}$
+   - ^mytopic-mln\d*$
